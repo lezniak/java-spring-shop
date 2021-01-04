@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+</head>
+<body>
+<div id="container">
+    <span style="color:red" th:if="${error == 'error'}">Błędne dane logowania</span>
+    <form  th:action="@{/login}"  method="post">
+        <input type="text" name="userName" placeholder="Name" /><br>
+        <input type="password" name="Password" placeholder="password"/><br>
+
+        <input type="submit" value="Submit" /><input type="submit" value="clear" />
+    </form>
+</div>
+</form>
+</body>
+</html>

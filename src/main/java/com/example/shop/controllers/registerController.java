@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.View;
-import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.bind.annotation.ResponseBody;
+
 @Controller
 public class registerController {
     @Autowired
@@ -27,4 +27,5 @@ public class registerController {
         model.addAttribute("user", new User());
         return "register";
     }
+
 }

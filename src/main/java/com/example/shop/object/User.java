@@ -13,7 +13,6 @@ public class User {
     private String userName;
     private String userEmail;
     private String userPassword;
-    private String confirmPassword;
 
     public Integer getId() {
         return id;
@@ -47,13 +46,5 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-
-    }
 
 }
