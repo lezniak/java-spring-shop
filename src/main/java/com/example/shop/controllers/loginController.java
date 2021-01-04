@@ -20,8 +20,7 @@ public class loginController {
 
     @PostMapping(value = "/login")
     public String postLogin(Model model, @ModelAttribute("login") login login, HttpSession session){
-        System.out.println(login.getUserName());
-        System.out.println(login.getPassword());
+
         if (findUser(login,session)){
             return "redirect:/user_page";
         }else{

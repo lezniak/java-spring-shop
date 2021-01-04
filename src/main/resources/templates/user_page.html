@@ -9,7 +9,7 @@
 </head>
 <body>
 <a href="/logout">logout</a>
-<span th:text="${login}"></span>
+<p>Hello dear </p><span th:text="${session.loggedUser.getUserName()}"></span>
 
 
 </body>
