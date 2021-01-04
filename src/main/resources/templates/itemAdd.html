@@ -15,8 +15,8 @@
             <a class="navbar-brand" href="/">SpringShop</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="/items">My items</a></li>
+            <li ><a href="#">Home</a></li>
+            <li class="active"><a href="/items">My items</a></li>
             <li><a href="/settings">Settings</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
@@ -24,10 +24,22 @@
 </nav>
 
 <div class="container">
+    <form  th:action="@{/items/add}"  method="post">
+        <input type="text" name="itemName" placeholder="Name" class="form-control" /><br>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="itemDesc" style="resize: none;"></textarea>
+        <select id="inputState" class="form-control">
+            <option selected>Choose...</option>
+            <option>5/5</option>
+            <option>4/5</option>
+            <option>3/5</option>
+            <option>2/5</option>
+        </select>
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Choose file</label>
 
-    <p>Hello dear </p>
-    <span th:text="${session.loggedUser.getUserName()}"></span>
-    <span th:text="${session.loggedUser.getUserEmail()}"></span>
+        <input type="submit" value="Submit" /><input type="submit" value="clear" />
+    </form>
+
 </div>
 
 

@@ -15,8 +15,8 @@
             <a class="navbar-brand" href="/">SpringShop</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="/items">My items</a></li>
+            <li ><a href="#">Home</a></li>
+            <li class="active"><a href="/items">My items</a></li>
             <li><a href="/settings">Settings</a></li>
             <li><a href="/logout">Logout</a></li>
         </ul>
@@ -24,10 +24,8 @@
 </nav>
 
 <div class="container">
+<a href="/items/add">Add item</a>
 
-    <p>Hello dear </p>
-    <span th:text="${session.loggedUser.getUserName()}"></span>
-    <span th:text="${session.loggedUser.getUserEmail()}"></span>
 </div>
 
 

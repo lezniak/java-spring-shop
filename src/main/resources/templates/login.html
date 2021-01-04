@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Register Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script></head>
+
 </head>
 <body>
-<div id="container">
-    <span style="color:red" th:if="${error == 'error'}">Błędne dane logowania</span>
-    <form  th:action="@{/login}"  method="post">
-        <input type="text" name="userName" placeholder="Name" /><br>
-        <input type="password" name="Password" placeholder="password"/><br>
 
-        <input type="submit" value="Submit" /><input type="submit" value="clear" />
-    </form>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+
+        <form th:action="@{/login}"  method="post">
+            <input type="text" class="fadeIn second" name="userName" placeholder="login">
+            <input type="password" class="fadeIn third" name="Password" placeholder="password">
+            <input type="submit" class="fadeIn fourth" value="Log In">
+        </form>
+
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+
+    </div>
 </div>
-</form>
+
 </body>
 </html>
