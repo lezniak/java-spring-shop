@@ -27,12 +27,12 @@
     <form  th:action="@{/items/add}"  method="post">
         <input type="text" name="itemName" placeholder="Name" class="form-control" /><br>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="itemDesc" style="resize: none;"></textarea>
-        <select id="inputState" class="form-control">
+        <select name="itemQuality" id="inputState" class="form-control">
             <option selected>Choose...</option>
-            <option>5/5</option>
-            <option>4/5</option>
-            <option>3/5</option>
-            <option>2/5</option>
+            <option name="5">5/5</option>
+            <option name="4">4/5</option>
+            <option name="3">3/5</option>
+            <option name="2">2/5</option>
         </select>
         <input type="file" class="custom-file-input" id="customFile">
         <label class="custom-file-label" for="customFile">Choose file</label>
