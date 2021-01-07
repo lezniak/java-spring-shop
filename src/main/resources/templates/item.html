@@ -27,7 +27,7 @@
 <div class="container">
 <a href="/items/add">Add item</a>
     <span th:text="${session.loggedUser.getUserName()}"></span>
-
+    <p>http://localhost:8080/user/<span th:text="${session.loggedUser.getId()}"></span></p>
 <br>
     <tr th:each="item, state : ${item}" class="row" th:classappend="${state.odd} ? 'odd-row' : 'even-row'">
         <td th:utext="${item.getItemName()}">Full Name</td>
