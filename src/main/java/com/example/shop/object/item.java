@@ -14,6 +14,7 @@ public class item {
     private String itemDesc;
     private String itemQuality;
     private Integer whoAdd;
+    private Byte[] image;
 
     public String getItemName() {
         return itemName;
@@ -53,5 +54,13 @@ public class item {
 
     public void setWhoAdd(Integer whoAdd) {
         this.whoAdd = whoAdd;
+    }
+
+    public Byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(Byte[] image) {
+        this.image = image;
     }
 }

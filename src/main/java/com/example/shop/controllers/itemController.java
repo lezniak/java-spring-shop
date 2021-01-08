@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
@@ -51,12 +52,13 @@ public class itemController {
     }
 
     @PostMapping(value = "/items/add")
-    public String itemAddPost(Model model, HttpSession session, @ModelAttribute("item") item item){
+    public String itemAddPost(Model model, HttpSession session, @ModelAttribute("item") item item, MultipartFile file){
         User isExist= (User) session.getAttribute("loggedUser");
         if (null == isExist){
             return "index";
         }
         item.setWhoAdd(isExist.getId());
+        System.out.println(file);
         itemRepository.save(item);
         return "redirect:/items";
     }
