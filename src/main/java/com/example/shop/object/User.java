@@ -10,7 +10,9 @@ public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
+    private String userNick;
     private String userName;
+    private String lastName;
     private String userEmail;
     private String userPassword;
 
@@ -46,5 +48,19 @@ public class User {
         this.userPassword = userPassword;
     }
 
+    public String getUserNick() {
+        return userNick;
+    }
 
+    public void setUserNick(String userNick) {
+        this.userNick = userNick;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 }

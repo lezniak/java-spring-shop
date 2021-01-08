@@ -18,14 +18,14 @@ public class profileController {
     private UserRepository userRepository;
     @Autowired
     private itemRepository itemRepository;
-    @RequestMapping(value = "/user/{id}")
+    @RequestMapping(value = "/user/{nickName}")
     public String userprofileRequest (
-            @PathVariable("id") int idLink, Model model) {
+            @PathVariable("nickName") String nickName, Model model) {
         List<User> user = new ArrayList<>();
         userRepository.findAll().forEach(user::add);
 
         for (int i = 0; i < user.size(); i++){
-            if(user.get(i).getId().equals(idLink)) {
+            if(user.get(i).getUserNick().equals(nickName)) {
                 model.addAttribute("user",user.get(i));
 
                 List<item> item = new ArrayList<>();
@@ -34,7 +34,7 @@ public class profileController {
                 List<item> findList = new ArrayList<>();
 
                 for (int z = 0; z < item.size(); z++) {
-                    if(item.get(z).getWhoAdd().equals(idLink)){
+                    if(item.get(z).getWhoAdd().equals(user.get(i).getId())){
                         findList.add(item.get(z));
                     }
                 }

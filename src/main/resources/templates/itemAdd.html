@@ -26,9 +26,9 @@
 <div class="container">
     <form  th:action="@{/items/add}"  method="post">
         <input type="text" name="itemName" placeholder="Name" class="form-control" /><br>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="itemDesc" style="resize: none;"></textarea>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" name="itemDesc" style="resize: none;" maxlength="500"></textarea>
         <select name="itemQuality" id="inputState" class="form-control">
-            <option selected>Choose...</option>
+            <option selected disabled>Choose...</option>
             <option name="5">5/5</option>
             <option name="4">4/5</option>
             <option name="3">3/5</option>

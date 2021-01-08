@@ -24,7 +24,7 @@ public class loginController {
         if (findUser(login,session)){
             return "redirect:/user_page";
         }else{
-            model.addAttribute("error","error");
+            model.addAttribute("error","login error");
             return "login";
         }
     }
@@ -49,7 +49,7 @@ public class loginController {
         userRepository.findAll().forEach(user::add);
 
         for (int i = 0; i < user.size(); i++){
-            if(user.get(i).getUserName().equals(userLogin)){
+            if(user.get(i).getUserNick().equals(userLogin)){
                 if(user.get(i).getUserPassword().equals(userPassword)){
                     session.setAttribute("loggedUser",user.get(i));
                     return true;
